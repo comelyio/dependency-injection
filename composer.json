@@ -11,7 +11,7 @@
   ],
   "require": {
     "php": ">=7.1.0",
-    "comelyio/comely-engine": "*"
+    "comelyio/comely-kernel": "*"
   },
   "autoload": {
     "psr-4": {
