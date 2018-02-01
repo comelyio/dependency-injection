@@ -71,6 +71,7 @@ class Repository implements \Countable
         }
 
         $key = $key ?? Comely::baseClassName(get_class($instance));
+        $key = $this->processKey(__METHOD__, $key);
         $this->instances[$key] = $instance;
         $this->count++;
 
@@ -83,6 +84,7 @@ class Repository implements \Countable
      */
     public function has(string $key): bool
     {
+        $key = $this->processKey(__METHOD__, $key);
         return array_key_exists($key, $this->instances);
     }
 
@@ -93,10 +95,22 @@ class Repository implements \Countable
      */
     public function pull(string $key)
     {
+        $key = $this->processKey(__METHOD__, $key);
         if (!$this->has($key)) {
             throw new RepositoryException(sprintf('No instance found for key "%s"', $key));
         }
 
         return $this->instances[$key];
+    }
+
+    /**
+     * @param string $method
+     * @param string $in
+     * @return string
+     * @throws Exception\DependencyInjectionException
+     */
+    private function processKey(string $method, string $in): string
+    {
+        return DependencyInjectionContainer::ProcessKey($method, $in);
     }
 }
