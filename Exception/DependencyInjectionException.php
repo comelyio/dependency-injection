@@ -22,4 +22,12 @@ use Comely\Kernel\Exception\ComelyException;
  */
 class DependencyInjectionException extends ComelyException
 {
+    /**
+     * @param string $method
+     * @return DependencyInjectionException
+     */
+    public static function InvalidKey(string $method): self
+    {
+        return new self(sprintf('Key provided to method "%s" is invalid', $method));
+    }
 }
