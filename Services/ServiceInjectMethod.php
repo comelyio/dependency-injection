@@ -33,7 +33,7 @@ class ServiceInjectMethod
      */
     public function __construct(string $name)
     {
-        if(!preg_match('/^[a-zA-Z0-9\_]{2,}$/', $name)) {
+        if (!preg_match('/^[a-zA-Z0-9\_]{2,}$/', $name)) {
             throw new ServicesException('Invalid DI method name');
         }
 
