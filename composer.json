@@ -1,0 +1,22 @@
+{
+  "name": "comelyio/dependency-injection",
+  "description": "Comely IO Component: Dependency Injection",
+  "keywords": ["dependency-injection", "di", "comely", "comelyio", "comely.io", "comely2"],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Furqan A. Siddiqui",
+      "email": "hello@furqansiddiqui.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.1.0",
+    "comelyio/comely-engine": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Comely\\IO\\DependencyInjection\\": ""
+    }
+  },
+  "minimum-stability": "dev"
+}
